@@ -8,7 +8,7 @@ const client = generateClient<Schema>();
 
 function App() {
   const [todos, setTodos] = useState<Array<Schema["Todo"]["type"]>>([]);
-  const { signOut } = useAuthenticator();
+  const { user, signOut } = useAuthenticator();
 
   useEffect(() => {
     client.models.Todo.observeQuery().subscribe({
@@ -26,7 +26,7 @@ function App() {
 
   return (
     <main>
-      <h1>Walt's To-Do | A host of possibilities `~`</h1>
+      <h1> {user?.signInDetails?.loginId}'s ToDo's| A host of possibilities `~`</h1>
       <button onClick={createTodo}>+ new</button>
       <ul>
         {todos.map((todo) => (
@@ -36,11 +36,13 @@ function App() {
         ))}
       </ul>
       <div>
-        🥳 App successfully hosted. Try creating a new todo.
+        🥳 App successfully hosted. Was fun creating and user based auth.
         <br />
+        <hr/>
         <a href="https://docs.amplify.aws/react/start/quickstart/#make-frontend-updates">
           Review next step of this tutorial.
         </a>
+        <hr/>
       </div>
       <button onClick={signOut}> Sign Out of here quick.. </button>
     </main>

@@ -6,6 +6,21 @@ This repository provides a starter template for creating applications using Reac
 
 This template equips you with a foundational React application integrated with AWS Amplify, streamlined for scalability and performance. It is ideal for developers looking to jumpstart their project with pre-configured AWS services like Cognito, AppSync, and DynamoDB.
 
+## Getting started locally
+
+⚛️ React + Vite: Fast and modern frontend development stack.
+
+🔐 Authentication (Mocked): Replace Cognito with local mock auth (e.g., username/password in-memory store or local storage).
+
+🔌 API (Mocked): Stub or mock GraphQL/API endpoints using tools like MSW or json-server.
+
+💾 Database (Mocked): Use in-memory data or a local JSON file to simulate database interactions.
+
+
+npm install
+
+npm run dev
+
 ## Features
 
 - **Authentication**: Setup with Amazon Cognito for secure user authentication.
